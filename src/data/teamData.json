@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Dev Narayan Yadav",
+    "role": "Convener",
+    "email": "yadavd@nitrkl.ac.in", 
+    "phone": "8349869748",
+    "department": "Computer Science & Engineering",
+    "image": "public/team/DevNarayanSirImg.jpeg",
+    "linkedin": "https://www.linkedin.com/in/devnyadav/",
+    "bio": "Assistant Professor & Convener, Department of CSE, NIT Rourkela"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Ramesh Kumar Mohapatra",
+    "role": "Co-Convener",
+    "email": "mohapatrark@nitrkl.ac.in",
+    "phone": "0661-2462366",
+    "department": "Computer Science & Engineering",
+    "image": "/team/ramesh-mohapatra.jpg",
+    "linkedin": "https://www.linkedin.com/in/ramesh-kumar-mohapatra-194b6071/",
+    "bio": "Professor, Department of CSE, NIT Rourkela"
+  },
+  {
+    "id": 3,
+    "name": "Krishna Kumar Rathore",
+    "role": "Student Coordinator",
+    "phone": "6263612174",
+    "department": "Computer Science & Engineering",
+    "year": "M.Tech",
+    "image": "public/team/krishna1.jpg",
+    "linkedin": "www.linkedin.com/in/krishna-kumar-rathore",
+    "bio": "Student Coordinator for Ethical Hacking Workshop 2025"
+  },
+  {
+    "id": 4,
+    "name": "Sahil",
+    "role": "Student Coordinator",
+    "phone": "8303032533",
+    "department": "Computer Science & Engineering",
+    "year": "M.Tech",
+    "image": "/team/sahil.jpg",
+    "linkedin": "https://linkedin.com/in/sahil",
+    "bio": "Student Coordinator for Ethical Hacking Workshop 2025"
+  },
+  {
+    "id": 4,
+    "name": "Abhinav Singh Bhardwaj",
+    "role": "Student Coordinator",
+    "phone": "6267905250",
+    "department": "Computer Science & Engineering",
+    "year": "M.Tech",
+    "image": "/team/sahil.jpg",
+    "linkedin": "https://linkedin.com/in/sahil",
+    "bio": "Student Coordinator for Ethical Hacking Workshop 2025"
+  },
+  {
+    "id": 4,
+    "name": "Devesh Swarnkar ",
+    "role": "Student Coordinator",
+    "phone": "7999251558",
+    "department": "Computer Science & Engineering",
+    "year": "M.Tech",
+    "image": "/team/sahil.jpg",
+    "linkedin": "https://linkedin.com/in/sahil",
+    "bio": "Student Coordinator for Ethical Hacking Workshop 2025"
+  }
+]

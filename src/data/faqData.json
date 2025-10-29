@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "What is the duration of the Ethical Hacking Workshop?",
+    "answer": "The workshop is a 2-week intensive program running from December 6-19, 2025, conducted in hybrid mode with both online and offline sessions."
+  },
+  {
+    "id": 2,
+    "question": "Who can participate in this workshop?",
+    "answer": "The workshop is open to students of all levels, research scholars, faculty members, industry experts, and general learners seeking to improve their understanding of ethical hacking and cybersecurity."
+  },
+  {
+    "id": 3,
+    "question": "What are the prerequisites for attending?",
+    "answer": "Participants should bring their laptops for offline sessions. Basic knowledge of Linux commands, networking, and SQL would be beneficial but not mandatory."
+  },
+  {
+    "id": 4,
+    "question": "Is there any special offer for NIT Rourkela students?",
+    "answer": "Yes! The first 10 NIT Rourkela students to register will get FREE registration on a first-come, first-serve basis."
+  },
+  {
+    "id": 5,
+    "question": "What tools and technologies will be covered?",
+    "answer": "The workshop covers industry-standard tools including NMAP, Nessus, Metasploit, Wireshark, Burp Suite, SQLMap, and various other cybersecurity tools for reconnaissance, exploitation, and defense."
+  }
+]

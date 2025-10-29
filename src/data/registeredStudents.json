@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Arjun Kumar Singh",
+    "college": "NIT Rourkela",
+    "year": "3rd Year",
+    "degree": "B.Tech",
+    "department": "Computer Science",
+    "registrationDate": "2025-10-15"
+  },
+  {
+    "id": 2,
+    "name": "Priya Sharma",
+    "college": "IIT Kharagpur",
+    "year": "2nd Year",
+    "degree": "M.Tech",
+    "department": "Information Technology",
+    "registrationDate": "2025-10-16"
+  },
+  {
+    "id": 3,
+    "name": "Rohit Patel",
+    "college": "NIT Rourkela",
+    "year": "4th Year",
+    "degree": "B.Tech",
+    "department": "Computer Science",
+    "registrationDate": "2025-10-17"
+  },
+  {
+    "id": 4,
+    "name": "Sneha Gupta",
+    "college": "IIIT Bhubaneswar",
+    "year": "3rd Year",
+    "degree": "B.Tech",
+    "department": "Electronics & Communication",
+    "registrationDate": "2025-10-18"
+  },
+  {
+    "id": 5,
+    "name": "Vikash Kumar",
+    "college": "NIT Rourkela",
+    "year": "2nd Year",
+    "degree": "B.Tech",
+    "department": "Computer Science",
+    "registrationDate": "2025-10-19"
+  },
+  {
+    "id": 6,
+    "name": "Ananya Das",
+    "college": "KIIT University",
+    "year": "1st Year",
+    "degree": "M.Tech",
+    "department": "Information Technology",
+    "registrationDate": "2025-10-20"
+  },
+  {
+    "id": 7,
+    "name": "Rahul Mishra",
+    "college": "NIT Rourkela",
+    "year": "4th Year",
+    "degree": "B.Tech",
+    "department": "Computer Science",
+    "registrationDate": "2025-10-21"
+  },
+  {
+    "id": 8,
+    "name": "Kavya Reddy",
+    "college": "VIT Vellore",
+    "year": "2nd Year",
+    "degree": "B.Tech",
+    "department": "Computer Science",
+    "registrationDate": "2025-10-22"
+  },
+  {
+    "id": 9,
+    "name": "Amit Jha",
+    "college": "NIT Rourkela",
+    "year": "1st Year",
+    "degree": "M.Tech",
+    "department": "Electronics & Communication",
+    "registrationDate": "2025-10-23"
+  },
+  {
+    "id": 10,
+    "name": "Divya Singh",
+    "college": "IIT Bhubaneswar",
+    "year": "2nd Year",
+    "degree": "M.Tech",
+    "department": "Computer Science",
+    "registrationDate": "2025-10-24"
+  },
+  {
+    "id": 11,
+    "name": "Ravi Kumar",
+    "college": "NIT Rourkela",
+    "year": "3rd Year",
+    "degree": "B.Tech",
+    "department": "Information Technology",
+    "registrationDate": "2025-10-25"
+  },
+  {
+    "id": 12,
+    "name": "Neha Agarwal",
+    "college": "IIT Delhi",
+    "year": "1st Year",
+    "degree": "M.Tech",
+    "department": "Cybersecurity",
+    "registrationDate": "2025-10-26"
+  }
+]
