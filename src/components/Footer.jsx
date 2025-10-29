@@ -170,27 +170,12 @@ const Footer = () => {
                   
                 </div>
                 <div>
-                    <img src="/public/team/DevNarayanSirImg.jpeg" alt="" />
+                    <img src="/team/DevNarayanSirImg.jpeg" alt="" />
                 </div>
               </div>
             </motion.div>
 
-            {/* Emergency Contact */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-4 mt-4 border rounded-lg bg-orange-500/10 border-orange-500/30"
-            >
-              <h6 className="mb-2 text-sm font-semibold text-orange-400">Emergency Contact</h6>
-              <div className="flex items-center space-x-3 text-sm">
-                <HiPhone className="text-orange-400" />
-                <span className="text-gray-300">24/7 Helpline:</span>
-                <a href="tel:+916612462366" className="text-orange-400 transition-colors hover:text-orange-300">
-                  0661-2462366
-                </a>
-              </div>
-            </motion.div> */}
+            
           </div>
         </div>
 
