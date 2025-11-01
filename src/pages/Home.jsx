@@ -36,7 +36,7 @@ const Home = () => {
       icon: HiLocationMarker,
       title: "Venue",
       content: "Department of Computer Science and Engineering",
-      subtitle: "NIT Rourkela, Odisha",
+      subtitle: "NIT Rourkela, Odisha, 769008",
       color: "from-cyber-blue/20 to-blue-500/20",
       iconColor: "text-cyber-blue",
     },
