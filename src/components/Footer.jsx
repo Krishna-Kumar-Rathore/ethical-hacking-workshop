@@ -1,23 +1,34 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { HiMail, HiPhone, HiLocationMarker, HiShieldCheck, HiAcademicCap } from 'react-icons/hi'
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa'
+// import { scrollToTop } from '../hooks/useScrollToTop'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
+
+  // ✅ ADDED: Local function definition
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })
+}
 
   const socialLinks = [
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: FaGithub, href: '#', label: 'GitHub' },
-    { icon: FaTwitter, href: '#', label: 'Twitter' },
-    { icon: FaInstagram, href: '#', label: 'Instagram' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/devnyadav/', label: 'LinkedIn' },
+    { icon: FaGithub, href: 'https://github.com/Krishna-Kumar-Rathore', label: 'GitHub' },
+    { icon: FaTwitter, href: 'https://twitter.com/devnyadav', label: 'Twitter' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/krishna_rathore2835?igsh=MWw4NmZ6cXd2NmZ0ag%3D%3D', label: 'Instagram' },
   ]
 
   const quickLinks = [
-    { name: 'About Workshop', href: '/about' },
-    { name: 'Registration', href: '/registration' },
-    { name: 'Schedule', href: '/schedule' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'About Workshop', path: '/about' },
+    { name: 'Registration', path: '/registration' },
+    { name: 'Schedule', path: '/schedule' },
+    { name: 'Contact Us', path: '/contact' },
   ]
 
   return (
@@ -28,7 +39,7 @@ const Footer = () => {
         <div className="absolute rounded-full -bottom-10 -right-10 w-60 h-60 bg-cyber-blue/5 blur-3xl animate-pulse" />
       </div>
 
-      <div className="relative container-custom section-padding">
+      <div className="relative py-12 container-custom">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Section */}
           <div className="lg:col-span-1">
@@ -39,7 +50,7 @@ const Footer = () => {
               className="flex items-center mb-6 space-x-3"
             >
               <div className="relative">
-                <HiShieldCheck className="text-3xl text-cyber-green" />
+                <HiShieldCheck className="text-3xl text-cyber-green drop-shadow-glow" />
                 <div className="absolute inset-0 rounded-full bg-cyber-green blur opacity-30" />
               </div>
               <div>
@@ -71,6 +82,8 @@ const Footer = () => {
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   className="flex items-center justify-center w-10 h-10 transition-all duration-300 border rounded-lg bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20 text-cyber-green hover:from-cyber-green/30 hover:to-cyber-blue/30 border-cyber-green/30 hover:border-cyber-green/50 focus-outline"
@@ -104,13 +117,14 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.path}
+                    onClick={scrollToTop}
                     className="flex items-center space-x-2 text-sm text-gray-400 transition-colors duration-300 hover:text-cyber-green group"
                   >
                     <span className="w-1 h-1 transition-opacity rounded-full opacity-0 bg-cyber-green group-hover:opacity-100" />
                     <span>{link.name}</span>
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </motion.ul>
@@ -127,55 +141,75 @@ const Footer = () => {
               <HiAcademicCap className="text-cyber-green" />
               <span>Workshop Convener</span>
             </motion.h4>
-
-           
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-6 transition-all duration-300 border card-3d rounded-xl bg-gradient-to-br from-cyber-green/5 to-cyber-blue/5 border-cyber-green/20 hover:border-cyber-green/40"
+              className="p-4 transition-all duration-300 border sm:p-6 card-3d rounded-xl bg-gradient-to-br from-cyber-green/5 to-cyber-blue/5 border-cyber-green/20 hover:border-cyber-green/40"
             >
-              <div className="flex items-start space-x-4">
-                <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20">
-                  <HiAcademicCap className="text-2xl text-cyber-green" /> 
-                </div>
-                <div className="flex-1">
-                  <h5 className="mb-1 text-lg font-semibold text-white">Dr. Dev Narayan Yadav</h5>
-                  <p className="mb-3 text-sm font-medium text-cyber-green">Assistant Professor & Convener</p>
-                  <p className="mb-4 text-sm text-gray-400">Department of CSE, NIT Rourkela</p>
-                  
-                  <div className="space-y-2">
-                    <a
-                      href="mailto:yadavd@nitrkl.ac.in"
-                      className="flex items-center p-1 space-x-2 text-sm text-gray-300 transition-colors duration-300 rounded-lg hover:text-cyber-green focus-outline"
-                    >
-                      <HiMail className="flex-shrink-0 text-lg" />
-                      <span>yadavd@nitrkl.ac.in</span>
-                    </a>
-                    
-                    <a
-                      href="tel:+918349869748"
-                      className="flex items-center p-1 space-x-2 text-sm text-gray-300 transition-colors duration-300 rounded-lg hover:text-cyber-green focus-outline"
-                    >
-                      <HiPhone className="flex-shrink-0 text-lg" />
-                      <span>+91 8349869748</span>
-                    </a>
-                    
-                    <div className="flex items-start space-x-2 text-sm text-gray-300">
-                      <HiLocationMarker className="text-lg flex-shrink-0 mt-0.5" />
-                      <span>NIT Rourkela, Odisha, India - 769008</span>
+              <div className="flex flex-col items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                {/* Profile Image */}
+                <div className="flex items-center flex-shrink-0 space-x-4 sm:flex-col sm:space-x-0 sm:space-y-3 sm:items-center">
+                  <div className="relative w-16 h-16 sm:w-20 sm:h-20">
+                    <img 
+                      src="/team/DevNarayanSirImg.jpeg" 
+                      alt="Dr. Dev Narayan Yadav"
+                      className="object-cover w-full h-full transition-all duration-300 border-2 rounded-full border-cyber-green/30 hover:border-cyber-green/50"
+                      onError={(e) => {
+                        e.target.style.display = 'none'
+                        e.target.nextSibling.style.display = 'flex'
+                      }}
+                    />
+                    {/* Fallback Icon */}
+                    <div className="items-center justify-center hidden w-full h-full border-2 rounded-full bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20 border-cyber-green/30">
+                      <HiAcademicCap className="text-2xl sm:text-3xl text-cyber-green" />
                     </div>
                   </div>
                   
+                  {/* Name & Title - Mobile Layout */}
+                  <div className="flex-1 sm:hidden">
+                    <h5 className="text-lg font-semibold text-white">Dr. Dev Narayan Yadav</h5>
+                    <p className="text-sm font-medium text-cyber-green">Assistant Professor & Convener</p>
+                    <p className="text-xs text-gray-400">Department of CSE, NIT Rourkela</p>
+                  </div>
                 </div>
-                <div>
-                    <img src="/team/DevNarayanSirImg.jpeg" alt="" />
+
+                {/* Info Section */}
+                <div className="flex-1 w-full">
+                  {/* Name & Title - Desktop Layout */}
+                  <div className="hidden mb-4 sm:block">
+                    <h5 className="text-lg font-semibold text-white">Dr. Dev Narayan Yadav</h5>
+                    <p className="text-sm font-medium text-cyber-green">Assistant Professor & Convener</p>
+                    <p className="text-sm text-gray-400">Department of CSE, NIT Rourkela</p>
+                  </div>
+                  
+                  {/* Contact Details */}
+                  <div className="space-y-2">
+                    
+                    <a  href="mailto:yadavd@nitrkl.ac.in"
+                      className="flex items-center p-2 space-x-2 text-sm text-gray-300 transition-colors duration-300 rounded-lg hover:text-cyber-green hover:bg-cyber-green/5 focus-outline group"
+                    >
+                      <HiMail className="flex-shrink-0 text-base transition-transform group-hover:scale-110" />
+                      <span className="break-all">yadavd@nitrkl.ac.in</span>
+                    </a>
+                    
+                    
+                    <a href="tel:+918349869748"
+                      className="flex items-center p-2 space-x-2 text-sm text-gray-300 transition-colors duration-300 rounded-lg hover:text-cyber-green hover:bg-cyber-green/5 focus-outline group"
+                    >
+                      <HiPhone className="flex-shrink-0 text-base transition-transform group-hover:scale-110" />
+                      <span>+91 8349869748</span>
+                    </a>
+                    
+                    <div className="flex items-start p-2 space-x-2 text-sm text-gray-300 rounded-lg group">
+                      <HiLocationMarker className="text-base flex-shrink-0 mt-0.5 group-hover:text-cyber-green transition-colors" />
+                      <span className="leading-relaxed">NIT Rourkela, Odisha, India - 769008</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
-
-            
           </div>
         </div>
 
@@ -193,14 +227,22 @@ const Footer = () => {
                 All rights reserved.
               </p>
               <p className="mt-1 text-xs text-gray-500">
-                Designed with 💚 for cybersecurity education
+                Designed by{' '}
+                <a 
+                  href="https://krishna-kumar-rathore.github.io/Portfolio/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-300 hover:text-cyber-green"
+                >
+                  Krishna Kumar Rathore
+                </a>
               </p>
             </div>
             
-            <div className="flex items-center space-x-6 text-xs text-gray-400">
-              <a href="#" className="transition-colors hover:text-cyber-green">Privacy Policy</a>
-              <a href="#" className="transition-colors hover:text-cyber-green">Terms of Service</a>
-              <a href="#" className="transition-colors hover:text-cyber-green">Code of Conduct</a>
+            <div className="flex flex-wrap items-center justify-center space-x-6 text-xs text-gray-400">
+              <Link to="#" className="transition-colors hover:text-cyber-green">Privacy Policy</Link>
+              <Link to="#" className="transition-colors hover:text-cyber-green">Terms of Service</Link>
+              <Link to="#" className="transition-colors hover:text-cyber-green">Code of Conduct</Link>
             </div>
           </div>
         </motion.div>

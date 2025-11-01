@@ -318,15 +318,15 @@ const Schedule = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <div className="flex items-center justify-center space-x-3 mb-6">
+          <div className="flex items-center justify-center mb-6 space-x-3">
             <HiCalendar className="text-4xl text-cyber-green" />
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-gradient">
+            <h1 className="text-4xl font-bold md:text-5xl font-heading text-gradient">
               Workshop Schedule
             </h1>
           </div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto text-xl text-gray-300">
             Comprehensive 2-week program with hands-on sessions, expert lectures, and practical assessments. 
             Join us for an intensive journey into ethical hacking and cybersecurity.
           </p>
@@ -339,7 +339,7 @@ const Schedule = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex justify-center mb-12"
         >
-          <div className="bg-slate-800/50 rounded-lg p-1 backdrop-blur-sm border border-cyber-green/20">
+          <div className="p-1 border rounded-lg bg-slate-800/50 backdrop-blur-sm border-cyber-green/20">
             <button
               onClick={() => setSelectedWeek(1)}
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -371,15 +371,15 @@ const Schedule = () => {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <div className="max-w-4xl mx-auto card-3d p-8 rounded-2xl glass-effect border border-cyber-green/20">
+          <div className="max-w-4xl p-8 mx-auto border card-3d rounded-2xl glass-effect border-cyber-green/20">
             <div className="text-center">
-              <h2 className="text-3xl font-heading font-bold text-white mb-4">
+              <h2 className="mb-4 text-3xl font-bold text-white font-heading">
                 {scheduleData[`week${selectedWeek}`].title}
               </h2>
-              <p className="text-cyber-green text-lg font-semibold mb-4">
+              <p className="mb-4 text-lg font-semibold text-cyber-green">
                 {scheduleData[`week${selectedWeek}`].dates}
               </p>
-              <p className="text-gray-300 text-lg">
+              <p className="text-lg text-gray-300">
                 {scheduleData[`week${selectedWeek}`].description}
               </p>
             </div>
@@ -408,8 +408,7 @@ const Schedule = () => {
           </div>
         </motion.div>
 
-        {/* Daily Schedule */}
-        {/*  */}
+        
 
         {/* Important Notes */}
         <motion.div
@@ -418,25 +417,25 @@ const Schedule = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16"
         >
-          <div className="max-w-4xl mx-auto card-3d p-8 rounded-2xl glass-effect border border-orange-500/30">
-            <h3 className="text-2xl font-heading font-bold text-white mb-6 text-center">
+          <div className="max-w-4xl p-8 mx-auto border card-3d rounded-2xl glass-effect border-orange-500/30">
+            <h3 className="mb-6 text-2xl font-bold text-center text-white font-heading">
               Important Information
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
+            <div className="grid grid-cols-1 gap-6 text-sm text-gray-300 md:grid-cols-2">
               <div>
-                <h4 className="font-semibold text-cyber-green mb-3">Session Timings</h4>
+                <h4 className="mb-3 font-semibold text-cyber-green">Session Timings</h4>
                 <ul className="space-y-2">
                   <li>• Morning Session: 09:00 - 12:30</li>
                   <li>• Afternoon Session: 14:00 - 17:30</li>
                   <li>• Lunch Break: 12:30 - 14:00</li>
-                  <li>• Tea Breaks: 10:30-11:00, 15:30-16:00</li>
+                  {/* <li>• Tea Breaks: 10:30-11:00, 15:30-16:00</li> */}
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-cyber-green mb-3">Requirements</h4>
+                <h4 className="mb-3 font-semibold text-cyber-green">Requirements</h4>
                 <ul className="space-y-2">
                   <li>• Laptop mandatory for hands-on sessions</li>
-                  <li>• Stable internet connection required</li>
+                  <li>• Stable internet connection required (For Online Batch) </li>
                   <li>• Virtual machine software recommended</li>
                   <li>• Note-taking materials suggested</li>
                 </ul>
