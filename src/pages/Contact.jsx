@@ -41,24 +41,13 @@ const Contact = () => {
       bio: "Student Coordinator for Ethical Hacking Workshop 2025"
     },
     {
-      id: 4,
-      name: "Sahil",
-      role: "Student Coordinator",
-      phone: "8303032533",
-      department: "Computer Science & Engineering",
-      year: "M.Tech",
-      image: "/team/sahil.jpg", // No image file provided yet - will show placeholder
-      linkedin: "https://linkedin.com/in/sahil",
-      bio: "Student Coordinator for Ethical Hacking Workshop 2025"
-    },
-    {
       id: 5,
       name: "Abhinav Singh Bhardwaj",
       role: "Student Coordinator",
       phone: "6267905250",
       department: "Computer Science & Engineering",
       year: "M.Tech",
-      image: "/team/Abhinav.jpeg", // Fixed: removed 'public' from path
+      image: "/team/Abhinav.jpg", // Fixed: removed 'public' from path
       linkedin: "https://www.linkedin.com/in/ab22032002ram/",
       bio: "Student Coordinator for Ethical Hacking Workshop 2025"
     },
@@ -69,18 +58,40 @@ const Contact = () => {
       phone: "7999251558",
       department: "Computer Science & Engineering",
       year: "M.Tech",
-      image: "/team/Devesh.jpg", // Fixed: updated filename and removed 'public'
-      linkedin: "https://linkedin.com/in",
+      image: "/team/Devesh.jpg",  // Fixed: updated filename and removed 'public'
+      linkedin: "http://www.linkedin.com/in/devesh-swarnkar",
+      bio: "Student Coordinator for Ethical Hacking Workshop 2025"
+    },
+    {
+      id: 4,
+      name: "Sahil",
+      role: "Student Coordinator",
+      phone: "8303032533",
+      department: "Computer Science & Engineering",
+      year: "M.Tech",
+      image: "/team/Sahil.jpg", // No image file provided yet - will show placeholder
+      linkedin: "https://www.linkedin.com/in/sahil-kumar-8864511a0",
       bio: "Student Coordinator for Ethical Hacking Workshop 2025"
     },
     {
       id: 7,
+      name: "Himanshu Shukla",
+      role: "Student Coordinator",
+      phone: " 9555120524",
+      department: "Computer Science & Engineering",
+      year: "M.Tech",
+      image: "/team/Himanshu.jpg", // Fixed: updated filename and removed 'public'
+      linkedin: "https://www.linkedin.com/in/himanshu-shukla-27ba9220a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      bio: "Student Coordinator for Ethical Hacking Workshop 2025"
+    },
+    {
+      id: 8,
       name: "Utsav Raj",
       role: "Student Coordinator",
       phone: "8651817956",
       department: "Computer Science & Engineering",
-      year: "B.Tech",
-      image: "/team/Utsav.jpg", // Fixed: updated filename and removed 'public'
+      year: "M.Tech",
+      image: "/team/utsav.jpg", // Fixed: updated filename and removed 'public'
       linkedin: "https://linkedin.com/in/utsav-raj",
       bio: "Student Coordinator for Ethical Hacking Workshop 2025"
     }

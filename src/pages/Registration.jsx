@@ -9,9 +9,11 @@ import {
   HiDesktopComputer,
   HiGlobeAlt,
   HiShieldCheck,
-  HiUserGroup
+  HiUserGroup,
+  HiClock,
+  HiExclamation
 } from 'react-icons/hi'
-import registeredStudents from '../data/registeredStudents.json'
+
 
 const Registration = () => {
   // Scroll to top function
@@ -22,6 +24,12 @@ const Registration = () => {
       behavior: 'smooth'
     })
   }
+
+  // Registration stats
+  const totalSeats = 100; // Adjust this number as needed
+  const registeredStudents = 65;
+  const availableSeats = totalSeats - registeredStudents;
+  const isAlmostFull = availableSeats <= 10;
   
   const registrationFees = [
     {
@@ -90,7 +98,7 @@ const Registration = () => {
           </motion.a>
         </motion.div>
 
-        {/* Registered Students Section */}
+        {/* Updated Registration Status Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,26 +108,128 @@ const Registration = () => {
           <div className="flex items-center justify-center mb-8 space-x-3">
             <HiUserGroup className="text-3xl text-cyber-green" />
             <h2 className="text-2xl font-bold text-center text-white font-heading">
-              Registered Students ({registeredStudents.length})
+              Registration Status
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {registeredStudents.map((student, index) => (
-              <motion.div
-                key={student.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ scale: 1.02, y: -2 }}
-                className="p-4 transition-all duration-300 border rounded-lg bg-gradient-to-r from-cyber-green/5 to-cyber-blue/5 border-cyber-green/20 hover:border-cyber-green/40"
-              >
-                <h4 className="mb-1 font-medium text-white">{student.name}</h4>
-                <p className="mb-1 text-sm text-gray-400">{student.college}</p>
-                <p className="text-xs text-cyber-green">{student.department} • {student.year}</p>
-              </motion.div>
-            ))}
+          {/* Registration Stats */}
+          <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-3">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="p-6 text-center border rounded-lg bg-gradient-to-r from-cyber-green/10 to-cyber-blue/10 border-cyber-green/20"
+            >
+              <div className="text-3xl font-bold text-cyber-green">{registeredStudents}</div>
+              <div className="text-sm text-gray-400">Students Registered</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className={`p-6 text-center border rounded-lg ${
+                isAlmostFull 
+                  ? 'bg-gradient-to-r from-red-500/10 to-orange-500/10 border-red-500/20' 
+                  : 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-cyan-500/20'
+              }`}
+            >
+              <div className={`text-3xl font-bold ${isAlmostFull ? 'text-red-400' : 'text-cyan-400'}`}>
+                {availableSeats}
+              </div>
+              <div className="text-sm text-gray-400">Seats Available</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="p-6 text-center border rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/20"
+            >
+              <div className="text-3xl font-bold text-purple-400">{totalSeats}</div>
+              <div className="text-sm text-gray-400">Total Seats</div>
+            </motion.div>
           </div>
+
+          {/* Progress Bar */}
+          <div className="mb-8">
+            <div className="flex justify-between mb-2 text-sm text-gray-400">
+              <span>Registration Progress</span>
+              <span>{Math.round((registeredStudents.length / totalSeats) * 100)}%</span>
+            </div>
+            <div className="w-full h-3 bg-gray-700 rounded-full">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: `${(registeredStudents.length / totalSeats) * 100}%` }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className={`h-3 rounded-full ${
+                  isAlmostFull 
+                    ? 'bg-gradient-to-r from-red-500 to-orange-500' 
+                    : 'bg-gradient-to-r from-cyber-green to-cyber-blue'
+                }`}
+              />
+            </div>
+          </div>
+
+          {/* Urgency Message */}
+          {isAlmostFull && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="p-4 mb-6 border rounded-lg bg-gradient-to-r from-red-500/10 to-orange-500/10 border-red-500/20"
+            >
+              <div className="flex items-center space-x-3">
+                <HiExclamation className="text-2xl text-red-400" />
+                <div>
+                  <h4 className="font-semibold text-red-400">Limited Seats Remaining!</h4>
+                  <p className="text-sm text-gray-300">Only {availableSeats} seats left. Register now to secure your spot!</p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="p-6 text-center border rounded-lg bg-gradient-to-r from-cyber-green/5 to-cyber-blue/5 border-cyber-green/20"
+          >
+            <HiClock className="mx-auto mb-3 text-3xl text-cyber-green" />
+            <h3 className="mb-2 text-lg font-semibold text-white">
+              {availableSeats > 0 ? 'Register Fast - Limited Seats Available!' : 'Registration Closed'}
+            </h3>
+            <p className="text-sm text-gray-400">
+              {availableSeats > 0 
+                ? 'Secure your place in this exclusive Ethical Hacking Workshop. Don\'t miss out!'
+                : 'All seats have been filled. Thank you for your interest!'
+              }
+            </p>
+            
+            {availableSeats > 0 && (
+              <motion.a
+                href="https://forms.gle/Q6xpKWdwerbsut7P8"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block px-8 py-3 mt-4 font-semibold transition-all duration-300 rounded-lg bg-gradient-to-r from-cyber-green to-cyan-500 text-cyber-dark hover:shadow-lg hover:shadow-cyber-green/25"
+              >
+                Register Now
+              </motion.a>
+            )}
+          </motion.div>
+
+          {/* Privacy Notice */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="mt-6 text-xs text-center text-gray-500"
+          >
+            <p>🔒 Student details are kept private for security reasons</p>
+          </motion.div>
         </motion.div>
       </div>
 
